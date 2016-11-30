@@ -1,0 +1,54 @@
+<!-- views/signup.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container navbar">
+    <div class="container">
+        <div style="float: left;"><h1>Simple Data Lab</h1></div>
+        <div style="position: absolute; right: 0; bottom: 10px;">
+            <a href="/about" class="btn btn-default">About</a>
+            <a href="/analysis" class="btn btn-default">Analysis</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-2">
+
+    <h1><span class="fa fa-sign-in"></span> Sign Up</h1>
+
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form action="/signup" method="post">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" placeholder="Enter your email" required pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Sign Up</button>
+    </form>
+
+    <hr>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+</div>
+
+</div>
+</body>
+</html>
